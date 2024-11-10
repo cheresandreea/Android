@@ -35,7 +35,7 @@ import com.example.myapplication.ui.components.StarItemDetails
 
 @Composable
 fun SeeAllStars(starList: List<Star>, starModelView: StarModelView, navController: NavController, modifier: Modifier = Modifier) {
-    var selectedStar by remember { mutableStateOf<Star?>(null) } // Track the selected star
+    var selectedStar by remember { mutableStateOf<Star?>(null) }
 
     Box(modifier.fillMaxSize()) {
         val image = painterResource(R.drawable.star)
@@ -47,7 +47,7 @@ fun SeeAllStars(starList: List<Star>, starModelView: StarModelView, navControlle
         )
         Column(
             modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.Start, // Ensures title is left-aligned within Column
+            horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Center ) {
             // "Add New Star" Button
             Row{
@@ -86,7 +86,6 @@ fun SeeAllStars(starList: List<Star>, starModelView: StarModelView, navControlle
                     )
 
                     Row {
-                        // Delete Button with Red Background and Text
                         Button(
                             onClick = {
                                 starModelView.deleteStar(star.id)
@@ -99,7 +98,6 @@ fun SeeAllStars(starList: List<Star>, starModelView: StarModelView, navControlle
                             Text("Delete", color = androidx.compose.ui.graphics.Color.White) // Text is white on red button
                         }
 
-                        // Edit Button with Green Background and Text
                         Button(
                             onClick = {
                                 navController.navigate("EditStar/${star.id}")

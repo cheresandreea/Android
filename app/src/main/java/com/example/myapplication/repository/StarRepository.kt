@@ -216,27 +216,22 @@ class StarRepository {
         return starList.find { it.id == starId } ?: Star(0, "", 0.0f, 0.0f, 0.0f, "", "", "", "", "")
     }
 
-    // Add a new star to the list
     fun addStar(star: Star) {
         starList.add(star)
     }
 
-    // Get all stars in the list
     fun getAllStars(): List<Star> {
         return starList
     }
 
-    // Update an existing star in the list by index
     fun updateStar(star: Star) {
         val index = starList.indexOfFirst { it.id == star.id }
 
-        // If the star exists, update it
         if (index != -1) {
             starList[index] = star
         }
     }
 
-    // Delete a star from the list by ID
     fun deleteStar(starId: Int) {
         starList.removeAll { it.id == starId }
     }

@@ -83,7 +83,6 @@ fun EditStar(
                     modifier = Modifier.padding(vertical = 8.dp)
                 )
 
-                // Star Name Field
                 OutlinedTextField(
                     value = starName,
                     onValueChange = { starName = it },
@@ -91,7 +90,6 @@ fun EditStar(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
                 )
 
-                // Radius Field
                 OutlinedTextField(
                     value = radius,
                     onValueChange = { radius = it },
@@ -99,7 +97,6 @@ fun EditStar(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
                 )
 
-                // X Position Field
                 OutlinedTextField(
                     value = xPosition,
                     onValueChange = { xPosition = it },
@@ -107,7 +104,7 @@ fun EditStar(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
                 )
 
-                // Y Position Field
+
                 OutlinedTextField(
                     value = yPosition,
                     onValueChange = { yPosition = it },
@@ -115,7 +112,6 @@ fun EditStar(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
                 )
 
-                // Temperature Field
                 temperature?.let {
                     OutlinedTextField(
                         value = it,
@@ -125,7 +121,6 @@ fun EditStar(
                     )
                 }
 
-                // Galaxy Field
                 OutlinedTextField(
                     value = galaxy,
                     onValueChange = { galaxy = it },
@@ -133,7 +128,6 @@ fun EditStar(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
                 )
 
-                // Constellation Field
                 OutlinedTextField(
                     value = constellation,
                     onValueChange = { constellation = it },
@@ -141,7 +135,6 @@ fun EditStar(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
                 )
 
-                // Description Field
                 OutlinedTextField(
                     value = description,
                     onValueChange = { description = it },
@@ -149,10 +142,9 @@ fun EditStar(
                     modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
                 )
 
-                // Save Changes Button
+
                 Button(
                     onClick = {
-                        // Save the updated star details
                         starModelView.updateStar(
                             Star(
                                 id = star.id,  // Retain the same star ID
@@ -167,7 +159,6 @@ fun EditStar(
                                 photo = photo
                             )
                         )
-                        // Navigate back to the "SeeAllStars" screen
                         navController.navigate("SeeAllStars")
                     },
                     modifier = Modifier.padding(vertical = 16.dp)
@@ -177,7 +168,6 @@ fun EditStar(
             }
         }
     } else {
-        // Handle case when the star is not found (could show a loading screen or error message)
         Text("Star not found")
     }
 }

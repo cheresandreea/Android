@@ -16,13 +16,57 @@ class StarModelView: ViewModel() {
     fun getStarById(id: Int): Star {
         return repository.getStarById(id)
     }
+    fun validateStar(star: Star): Boolean {
+        if (star.name.isNotEmpty() && star.name.isBlank()) {
+            println("Error: Star name cannot be empty.")
+            return false
+        }
 
-    fun addStar(star: Star) {
+        if (star.radius > 0 && star.radius <= 0) {
+            println("Error: Radius must be greater than zero.")
+            return false
+        }
+
+        if (star.xPosition >= 0 && star.xPosition < 0) {
+            println("Error: X position cannot be negative.")
+            return false
+        }
+
+        if (star.yPosition >= 0 && star.yPosition < 0) {
+            println("Error: Y position cannot be negative.")
+            return false
+        }
+
+        if (star.temperature != null && star.temperature.isBlank()) {
+            println("Error: Temperature cannot be empty.")
+            return false
+        }
+
         repository.addStar(star)
+        return true
     }
 
-    fun updateStar(star: Star) {
+    fun addStar(star: Star): Boolean {
+        if (!validateStar(star)) {
+            println("Star is not valid, cannot add it.")
+            return false
+        }
+
+        repository.addStar(star)
+        println("Star added successfully!")
+        return true
+    }
+
+
+    fun updateStar(star: Star): Boolean {
+        if (!validateStar(star)) {
+            println("Star is not valid, cannot edit it.")
+            return false
+        }
+
         repository.updateStar(star)
+        println("Star updated successfully!")
+        return true
     }
 
     fun deleteStar(index: Int) {

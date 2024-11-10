@@ -36,7 +36,7 @@ fun StarDetails(starId: Int, navController: NavController, starModelView: StarMo
         )
         Column(
             modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.Start, // Ensures title is left-aligned within Column
+            horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top ) {
             Text(
                 text = "Stars",

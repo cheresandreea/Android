@@ -18,7 +18,7 @@ import com.example.myapplication.domain.Star
 fun StarItem(star: Star, onClick: () -> Unit) {
     Column(modifier = Modifier
         .padding(10.dp)
-        .clickable(onClick = onClick) // Make the item clickable
+        .clickable(onClick = onClick)
     ) {
         Text(text = "Name: ${star.name}", fontSize = 18.sp)
         Text(text = "Galaxy: ${star.galaxy}")

@@ -75,7 +75,6 @@ fun AddStar(navController: NavController, starModelView: StarModelView, modifier
                 modifier = Modifier.padding(vertical = 8.dp)
             )
 
-            // Star Name Field
             OutlinedTextField(
                 value = starName,
                 onValueChange = { starName = it },
@@ -83,7 +82,6 @@ fun AddStar(navController: NavController, starModelView: StarModelView, modifier
                 modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
             )
 
-            // Radius Field
             OutlinedTextField(
                 value = radius,
                 onValueChange = { radius = it },
@@ -91,7 +89,6 @@ fun AddStar(navController: NavController, starModelView: StarModelView, modifier
                 modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
             )
 
-            // X Position Field
             OutlinedTextField(
                 value = xPosition,
                 onValueChange = { xPosition = it },
@@ -99,7 +96,6 @@ fun AddStar(navController: NavController, starModelView: StarModelView, modifier
                 modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
             )
 
-            // Y Position Field
             OutlinedTextField(
                 value = yPosition,
                 onValueChange = { yPosition = it },
@@ -107,7 +103,7 @@ fun AddStar(navController: NavController, starModelView: StarModelView, modifier
                 modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
             )
 
-            // Temperature Field
+
             OutlinedTextField(
                 value = temperature,
                 onValueChange = { temperature = it },
@@ -115,7 +111,7 @@ fun AddStar(navController: NavController, starModelView: StarModelView, modifier
                 modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
             )
 
-            // Galaxy Field
+
             OutlinedTextField(
                 value = galaxy,
                 onValueChange = { galaxy = it },
@@ -123,7 +119,6 @@ fun AddStar(navController: NavController, starModelView: StarModelView, modifier
                 modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
             )
 
-            // Constellation Field
             OutlinedTextField(
                 value = constellation,
                 onValueChange = { constellation = it },
@@ -131,7 +126,6 @@ fun AddStar(navController: NavController, starModelView: StarModelView, modifier
                 modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
             )
 
-            // Description Field
             OutlinedTextField(
                 value = description,
                 onValueChange = { description = it },
@@ -143,7 +137,6 @@ fun AddStar(navController: NavController, starModelView: StarModelView, modifier
             Button(
                 onClick = {
                     val newStarId = (starModelView.stars.size + 1)
-                    // Add new star to starModelView
                     starModelView.addStar(
                         Star(
                             id = newStarId,
